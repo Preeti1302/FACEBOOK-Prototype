@@ -1,0 +1,96 @@
+<html>
+  <head>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+    <title>Login</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/custom.css' />
+    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	 <script src="angularjs/fbLogin.js"></script> 
+  </head>
+ 
+  <body ng-app="myApp" ng-controller="validateCtrl" style= "background-color:#edf0f5">
+  		<!-- header starts here -->
+<div id="facebook-Bar">
+  <div id="facebook-Frame">
+    <div id="logo"> <a href="">facebook</a> </div>
+    <div id="header-main-right">
+      <div id="header-main-right-nav">
+        <form class="pull-right"   name="myForm" novalidate>
+          <table border="0" style="border:none">
+            <tr>
+              <td ><input type="email"  ng-model = "email"  name = "email" id="email"  placeholder="Email Id" required>
+		                      <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+							  <span ng-show="myForm.email.$error.required">Email Id is required.</span>
+							  <span ng-show="myForm.email.$error.email">Invalid Email</span>
+						      </span></td>
+              <td ><input type="password" ng-model = "inputPassword" style="margin-left:4px" name="inputPassword" id="inputPassword" placeholder="Password" required>
+	                          <span style="color:red" ng-show="myForm.inputPassword.$dirty && myForm.inputPassword.$invalid">
+							  <span ng-show="myForm.inputPassword.$error.required">Password is required.</span>
+						      </span></td>
+						      
+						      
+              <td ><input type="submit" class="fbbutton" name="login" value="Login" ng-click="submitfb();" ng-disabled="myForm.email.$dirty && myForm.email.$invalid || myForm.pass.$dirty && myForm.inputPassword.$invalid"/></td>
+            </tr>
+            <tr>
+              <td><label>
+                  <input id="persist_box" type="checkbox" name="persistent" value="1" checked="1"/>
+                  <span style="color:#ccc;">Keep me logged in</span></label></td>
+              <td><label><a href="" style="color:#ccc; text-decoration:none">forgot your password?</a></label></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- header ends here -->
+
+<div class="loginbox radius">
+<div class="col-md-7 img-responsive"><img src="img/Facebook_home.JPG" /></div>
+		<div class="col-md-5" >
+		  <h2 style="background-color:#edf0f5; text-align:center">Welcome to Facebook</h2>
+		  <div class="loginboxinner radius">
+		    <div class="loginheader">
+		      <h4 class="title">Connect with friends and the world around you.</h4>
+		    </div>
+		    <!--loginheader-->
+		    <div class="loginform">
+		    <form id="login"  name="myForm1" novalidate>
+		        
+		          <input type="text" ng-model="firstName" id="firstname" name="firstname" placeholder="First Name" value="" class="radius mini" required/>
+		          <input type="text" ng-model="lastName" id="lastname" name="lastname" placeholder="Last Name" value="" class="radius mini" required/>
+		        
+		        
+		          <input type="text" ng-model="emailid" id="emailid" name="emailid" placeholder="Your Email" value="" class="radius" required/>
+		         	<span style="color:red" ng-show="myForm1.emailid.$dirty && myForm1.emailid.$invalid">
+					<span ng-show="myForm1.emailid.$error.required">Email Id is required.</span>
+					<span ng-show="myForm1.emailid.$error.email">Invalid Email</span>
+					</span>
+		        
+		          <input type="text" ng-model="remail" id="remail" name="remail" placeholder="Re-enter Email" class="radius" required />
+		          <span style="color:red" ng-show="myForm1.remail.$dirty && myForm1.remail.$invalid">
+					<span ng-show="myForm1.remail.$error.required">Email Id is required.</span>
+					<span ng-show="myForm1.remail.$error.email">Invalid Email</span>
+					</span>
+		        
+		          <input type="password" ng-model="password" id="password" name="password" placeholder="New Password" class="radius" required/>
+		           <span style="color:red" ng-show="myForm1.password.$dirty && myForm1.password.$invalid">
+									  <span ng-show="myForm1.password.$error.required">Password is required.</span>
+								      </span></td>
+		        
+		        <br> <br>  <button ng-click="signUpfb();" class="radius title" type="submit" ng-disabled="myForm1.emailid.$dirty && myForm1.emailid.$invalid || myForm1.password1.$dirty && myForm1.password1.$invalid">Sign Up for Facebook</button>
+		      </form> 
+		    </div>
+		    <!--loginform-->
+		  </div>
+		  <!--loginboxinner-->
+		</div>
+</div>
+
+<!--loginbox-->
+ </body>
+</html>

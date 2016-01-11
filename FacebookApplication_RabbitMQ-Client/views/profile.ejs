@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/wallPage.css' />
+       <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+       <link rel='stylesheet' href='/stylesheets/blog.css' />
+       <link rel='stylesheet' href='/stylesheets/homepage.css' />
+       <link rel='stylesheet' href='/stylesheets/dashboard.css' />
+       
+       <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	 <script src="angularjs/fbLogin.js"></script> 
+</head>
+<body ng-app="myApp" ng-controller="validateCtrl">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+         <div class="container-fluid">
+            <div class="navbar-header col-md-6">
+               <a class="navbar-brand">facebook</a>
+               <form class="navbar-form">
+                  <input type="text" class="form-control" placeholder="Search...">
+               </form>
+            </div>
+            
+            <div id="navbar" class="navbar-collapse collapse col-md-6">
+            			
+               <ul class="nav navbar-nav navbar-right">
+                  <li><form method = "get" action = "/profile"><button type="button" class="btn btn-primary" style="background-color: #4C669F"><%= data.firstName %></button></form></li>
+                  <li><form method = "post" action = "/redirectToHomepage"><button type="button" class="btn btn-primary" style="background-color: #4C669F">Home</button></form></li>
+                  <li><form><button type="submit" ng-click="fbFriend();" class="btn btn-primary" style="background-color: #4C669F">Friends</button></form></li>
+                  <li><form method = "post" action = "/logout"><button type="submit" class="btn btn-primary" style="background-color: #4C669F">LogOut</button></form></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-2 sidebar">
+		  <ul class="nav nav-sidebar">
+		  
+            <li><form><button type="submit" ng-click="profileFb();" class="btn btn-link" >About</button></form></li><br>
+            <li><form><button type="submit" ng-click="fbFriend();" class="btn btn-link" >Friends</button></form></li><br>
+            <li><form method = "get" action = "/redirectToHomepage"><button type="submit" class="btn btn-link" >News Feed</form></li><br>
+            <li><form><button type="submit" ng-click="interestsFb();" class="btn btn-link" >Interests</button></form></li><br>
+            <li><button type="submit" ng-click="groupsFb();" class="btn btn-link" >Groups</button></form></li><br>
+          </ul>
+		</div>
+		<!-- ***************************************************************************************** -->
+            <div class="col-md-6 col-md-offset-2 main">
+                        
+            	<div class="row">
+               		<form class="navbar-form">
+                  <input type="text" class="form-control" placeholder="What's on your mind?....">
+                  <span><button type="button" class="btn btn-primary btn-md post-button-navbar">Post</button></span>
+               </form>
+            	</div>
+            	
+            	<div class="row">
+            		<ul class="nav nav-tabs">
+					  <li role="presentation"><a href="#">Timeline</a></li>
+					  <li role="presentation"><a href="#">About</a></li>
+					  <li role="presentation"><a href="#">Friends</a></li>
+					  <li role="presentation"><a href="#">Presentation</a></li>
+					</ul>
+					<br/>
+            	</div>
+            	
+            	
+            	<div class=" row panel panel-default">
+		            <div class="panel-heading">
+		              <h3 class="panel-title">About</h3>
+		            </div>
+		            <div class="panel-body">
+		            <div class="container-fluid">
+		            <div class="row">
+		            	<div class="col-sm-4">
+				            <ul class="nav nav-pills nav-stacked">
+						      <li class="navPills"><a href="#">Overview</a></li>
+						      <li class="navPills"><a href="#">Work Information</a></li>
+						      <li class="navPills"><a href="#">Education</a></li>
+						      <li class="navPills"><a href="#">Contact Information</a></li>
+						      <li class="navPills"><a href="#">Life Events</a></li>
+						    </ul>
+					    </div>
+					    <div class="col-sm-8">
+					    	<ul class="nav nav-stacked">
+						      <li class="navPills" style="font-color:black"><a href="#"><%= data.overview %></a></li>
+						      <li class="navPills" style="font-color:black"><a href="#"><%= data.workInfo %></a></li>
+						      <li class="navPills" style="font-color:black"><a href="#"><%= data.education %></a></li>
+						      <li class="navPills" style="font-color:black"><a href="#"><%= data.contact %></a></li>
+						      <li class="navPills" style="font-color:black"><a href="#"><%= data.lifeEvents %></a></li>
+						    </ul>
+		              	</div>
+		            </div>
+		           <!--  <form method = "get" action = "/editProfile">
+		            <div class="row">
+					            	<br/>
+					            	<button class="btn btn-success pull-right" style="margin-right:30px;" type="submit">Edit</button>
+					            </div>
+					            </form>
+		            </div>
+		            </div>
+		        </div>
+		        
+		         <div class=" row panel panel-default">
+		            <div class="panel-heading">
+		              <h3 class="panel-title">Friends</h3>
+		            </div>
+		            <div class="panel-body">
+		              Friends content
+		               
+		            </div>
+		        </div>
+		        
+		        <div class=" row panel panel-default">
+		            <div class="panel-heading">
+		              <h3 class="panel-title">Interest</h3>
+		            </div>
+		            <div class="panel-body">
+		              Interest content
+		            </div>
+		        </div>-->
+            	
+            <!-- ***************************************************************************************** -->	
+            </div>
+            <div class="col-md-4 col-md-offset-8 sidebar">
+            </div>
+         </div>
+      </div>
+      <!-- Bootstrap core JavaScript
+         ================================================== -->
+      <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+      <link rel='stylesheet' href='/stylesheets/homepage.css' />
+      <link rel='stylesheet' href='/stylesheets/dashboard.css' />
+      <link rel='stylesheet' href='/stylesheets/bootstrap.min.js' />
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      
+   </body>
+</html>
